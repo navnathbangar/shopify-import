@@ -36,8 +36,8 @@ class UploadController extends Controller
 
         
 
-        //ProcessCsvImportJob::dispatch($upload);
-        (new \App\Jobs\ProcessCsvImportJob($upload))->handle();
+        ProcessCsvImportJob::dispatch($upload);
+        //(new \App\Jobs\ProcessCsvImportJob($upload))->handle();
 
         return back()->with(
 
